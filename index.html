@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasir Restoran - RESTORAN UNSIA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>RESTORAN UNSIA</h1>
+        <p>Selamat datang di Restoran Unsia, tempatnya makan enak dan nyaman!</p>
+    </div>
+    <div class="container">
+        <h2>Kasir Restoran</h2>
+        <div class="input-section">
+            <label>Pilih Menu: </label>
+            <select id="itemName" onchange="updatePrice()">
+                <option value="Nasi Goreng" data-price="20000">Nasi Goreng - Rp 20,000</option>
+                <option value="Mie Goreng" data-price="15000">Mie Goreng - Rp 15,000</option>
+                <option value="Ayam Penyet" data-price="25000">Ayam Penyet - Rp 25,000</option>
+                <option value="Sate" data-price="30000">Sate - Rp 30,000</option>
+                <option value="Es Teh" data-price="5000">Es Teh - Rp 5,000</option>
+                <option value="Kopi" data-price="10000">Kopi - Rp 10,000</option>
+                <option value="Juice Jeruk" data-price="15000">Juice Jeruk - Rp 15,000</option>
+                <option value="Es Krim" data-price="12000">Es Krim - Rp 12,000</option>
+                <option value="Rendang" data-price="35000">Rendang - Rp 35,000</option>
+                <option value="Bakso" data-price="20000">Bakso - Rp 20,000</option>
+            </select>
+            <label>Harga: </label>
+            <input type="number" id="price" value="20000" readonly>
+            <label>Jumlah: </label>
+            <input type="number" id="quantity" placeholder="Masukkan jumlah">
+            <button onclick="addItem()">Tambah Item</button>
+        </div>
+        <div class="output-section">
+            <h3>Daftar Belanja</h3>
+            <div id="itemList"></div>
+            <h4 id="totalPrice">Total: Rp 0</h4>
+        </div>
+        <div class="payment-section">
+            <h3>Pembayaran</h3>
+            <label>Uang yang Dibayarkan:</label>
+            <input type="number" id="cashPaid" placeholder="Masukkan jumlah uang yang dibayarkan">
+            <button onclick="calculateChange()">Hitung Kembalian</button>
+            <h4 id="change">Kembalian: Rp 0</h4>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
